@@ -119,6 +119,14 @@
   .numbers div{padding:18px 20px 0 0}
   .numbers strong{display:block;white-space:nowrap;font-size:clamp(26px,3vw,40px);letter-spacing:-.035em;line-height:1;font-weight:800}
   .numbers span{color:var(--muted);font-size:15px;line-height:1.35;display:block;margin-top:8px}
+  .video{margin:0 0 56px}
+  .video iframe,.video-soon{width:100%;aspect-ratio:16/9;border:0;border-radius:4px 22px 4px 4px;display:block}
+  .video-soon{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:24px;
+    color:var(--ink);background:var(--unknown);
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:40px 40px}
+  .video-soon svg{width:64px;height:64px;color:var(--laser)}
+  .video-soon strong{font-size:clamp(20px,2.4vw,28px);letter-spacing:-.02em;font-weight:800;background:var(--free);padding:4px 12px;border-radius:4px}
+  .video-soon span{max-width:46ch;color:var(--muted);font-size:15.5px;background:var(--free);padding:4px 12px;border-radius:4px}
   .diagram{background:var(--panel);border-radius:4px 22px 4px 4px;padding:28px;margin-bottom:56px;overflow-x:auto}
   .diagram svg{min-width:860px;width:100%;height:auto;display:block}
   .swipe{display:none}
@@ -266,15 +274,25 @@
         <span class="tag">Final-year project, leading a team of four</span>
         <h2>Pathik, a campus robot you can talk to</h2>
       </div>
-      <p class="lede">An indoor service robot for our department floor. Staff ask it in English or Hinglish to go somewhere or carry something, and it plans, drives and reports back, on a Raspberry Pi 4 and a ₹40k budget, without Nav2.</p>
+      <p class="lede">An indoor service robot for our department floor. Staff ask it in English or Hinglish to go somewhere or carry something, and it plans, drives and reports back, on a Raspberry Pi 4 and a ₹45k budget, without Nav2.</p>
     </div>
 
     <div class="numbers">
       <div><strong>15.5×12.2 m</strong><span>floor mapped with Cartographer from a 2D LiDAR</span></div>
       <div><strong>50 Hz</strong><span>wheel and gyro odometry from my ESP32-S3 firmware</span></div>
-      <div><strong>~₹40k</strong><span>total hardware, aluminium chassis built locally</span></div>
+      <div><strong>~₹45k</strong><span>total hardware, aluminium chassis built locally</span></div>
       <div><strong>100+</strong><span>unit tests run in CI on every commit, with the firmware compiled too</span></div>
     </div>
+
+    <figure class="video" id="pathik-video">
+      <!-- When the video is ready, replace the div.video-soon below with:
+           <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Pathik demo" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe> -->
+      <div class="video-soon">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 5"/><path d="M26 21v22l18-11z" fill="currentColor"/></svg>
+        <strong>Video demonstration coming soon</strong>
+        <span>Pathik mapping the floor, taking a spoken command and driving to a room, filmed on our department floor.</span>
+      </div>
+    </figure>
 
     <figure class="diagram">
       <svg viewBox="0 0 1000 330" role="img" aria-labelledby="dg-t">
@@ -441,6 +459,11 @@
         <div><h4>Cinema demand forecasting</h4><p>Gradient boosting on 200,000+ records with 24 engineered features, reaching R² 0.91.</p></div>
         <div class="stack">Python, scikit-learn, pandas, SQL</div>
       </div>
+      <div class="row">
+        <div class="when">2024</div>
+        <div><h4>Line follower robot and gesture-controlled car</h4><p>My first robots. An IR line follower, and a car driven by tilting your hand, with a motion sensor on the glove sending commands wirelessly. Took them to RoboDrive at IIIT Una.</p></div>
+        <div class="stack">Arduino, IR sensors, IMU, motor drivers</div>
+      </div>
     </div>
   </div>
 </section>
@@ -448,9 +471,11 @@
 <section id="path">
   <div class="wrap">
     <h2>How I got here</h2>
-    <p class="lede measure">From models on a laptop to machines on a floor. Each step was a little closer to hardware.</p>
+    <p class="lede measure">From a line follower in second year to a robot that maps and drives itself. Each step went a little deeper into real hardware.</p>
     <ol class="tl">
       <li><time>2023</time><i></i><div>Started B.Tech CSE (AI &amp; DS) at GHEC and the IIT Madras BS in Data Science together<span>Maths, classical ML from scratch, then neural networks in NumPy</span></div></li>
+      <li><time>2024</time><i></i><div>First robots: a line follower and a hand-gesture controlled car<span>Sensors, motor drivers and microcontrollers, learned by building</span></div></li>
+      <li><time>2024</time><i></i><div>RoboDrive at IIIT Una and a hackathon at PEC Chandigarh<span>First robotics competition and first hackathon outside college</span></div></li>
       <li><time>2025</time><i></i><div>Pothole detection study with our own mountain-road dataset<span>Presented as first author at IEEE OCIT, KIIT Bhubaneswar, December 2025</span></div></li>
       <li><time>2026</time><i></i><div>GATE 2026, AIR 430 in Data Science &amp; AI<span>AIR 3460 in Computer Science</span></div></li>
       <li><time>Jun 2026</time><i></i><div>Robotics research at IIIT Allahabad<span>First ROS 2 robot: SLAM, Nav2 and an LLM command node on a TurtleBot3</span></div></li>
