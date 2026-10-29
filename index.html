@@ -158,6 +158,8 @@
   .chips li{font-size:13.5px;padding:3px 10px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
   .pot{background:var(--panel);border-radius:4px 22px 4px 4px;aspect-ratio:3/2;margin-bottom:22px;position:relative;overflow:hidden}
   .pot svg{width:100%;height:100%;display:block}
+  .vgfacts{grid-template-columns:repeat(3,1fr);margin:22px 0 14px}
+  @media (max-width:560px){.vgfacts{grid-template-columns:1fr}}
   @media (max-width:900px){.pair{grid-template-columns:1fr;gap:72px}}
 
   /* more work */
@@ -390,19 +392,24 @@
     <h2 id="more-h" class="sr-only" style="position:absolute;left:-9999px">More projects</h2>
     <div class="pair">
       <article class="proj">
-        <img src="assets/vestguard.jpg" alt="VestGuard vest, front and back, showing where the buzzer, ESP32-S3, battery and two motion sensors sit" width="1400" height="932" loading="lazy">
+        <div class="pot vg" aria-hidden="true">
+          <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+            <rect width="600" height="400" fill="var(--panel)"/>
+            <path d="M0 250 H170 l22 -64 l26 128 l24 -170 l26 150 l18 -44 H600" fill="none" stroke="var(--laser)" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+            <circle cx="300" cy="200" r="70" fill="var(--free)" stroke="var(--line)" stroke-width="2"/>
+            <path d="M300 160 l34 14 v26 c0 22 -15 38 -34 46 c-19 -8 -34 -24 -34 -46 v-26z" fill="none" stroke="var(--ink)" stroke-width="5" stroke-linejoin="round"/>
+            <path d="M286 203 l10 10 l20 -22" fill="none" stroke="var(--ok)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <span class="tag">Team lead, 1st prize at the state finale</span>
         <h3>VestGuard, a vest that calls for help after a fall</h3>
-        <p>Elders in Himalayan villages often live alone, and after a fall the wait for help is the dangerous part. VestGuard is a traditional Himachali vest with two motion sensors along the spine and an ESP32-S3 that decides on the vest itself, then raises an alarm and alerts the family.</p>
-        <table class="result">
-          <thead><tr><th>Test set, V2 prototype</th><th>Trials</th><th>Correct</th></tr></thead>
-          <tbody>
-            <tr><td>Falls detected, 12 fall types</td><td>150</td><td class="n">94.7%</td></tr>
-            <tr><td>Daily activities ignored</td><td>145</td><td class="n">96.6%</td></tr>
-            <tr class="best"><td><b>Overall</b></td><td>295</td><td class="n">95.6%</td></tr>
-          </tbody>
-        </table>
-        <p class="note">Detection method kept private until the patent is granted. Invited to apply to the HP State Innovation Fund.</p>
+        <p>Elders in Himalayan villages often live alone, and after a fall the wait for help is the dangerous part. VestGuard is a wearable that notices a fall on its own, with no button to press, and gets help to the person.</p>
+        <dl class="facts vgfacts">
+          <div><dt>95.6%</dt><dd>correct across 295 real-time trials</dd></div>
+          <div><dt>Patent pending</dt><dd>IN 202611122870</dd></div>
+          <div><dt>Next step</dt><dd>invited to the HP State Innovation Fund</dd></div>
+        </dl>
+        <p class="note">The design and detection method stay private until the patent process is complete.</p>
         <div class="links"><a href="https://github.com/ArpitAwasthi2411/VestGuard">Project page</a></div>
       </article>
 
